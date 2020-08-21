@@ -38,7 +38,7 @@ bot.on("ready", async () => {
 
     console.log(`BOOMMM ${bot.user.username} is online!`);
 
-    bot.user.setActivity("🛠️ PokéPlay, { type: "PLAYING" });
+    bot.user.setActivity("🛠️ PokéPlay", { type: "PLAYING" });
 
 })
 
@@ -69,8 +69,8 @@ bot.on("message", async message => {
     if (message.channel.id === SUGGESTION_CHANNEL) {
         let embed = new Discord.RichEmbed()
         .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
-        .setColor(1752220)
-        .setTitle('Server Suggestions')
+        .setColor(15844367)
+        .setTitle('Server Suggestie')
         .setDescription(message.content)
         .setTimestamp(message.member.nickname());
         message.channel.send(embed).then((message) => {

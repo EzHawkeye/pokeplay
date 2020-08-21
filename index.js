@@ -78,10 +78,6 @@ bot.on("message", async message => {
           const sent = message;
           sent.react('✅').then(() => {
             sent.react('❌').then(() => {
-              log(LOG_LEVELS.SPAM,'Completed suggestion message');
-            }).catch(console.error);
-          }).catch(console.error);
-        }).catch(console.error);
         return message.delete();
       }
 
@@ -96,10 +92,6 @@ bot.on("message", async message => {
           const sent = message;
           sent.react('✅').then(() => {
             sent.react('❌').then(() => {
-              log(LOG_LEVELS.SPAM,'Completed suggestion message');
-            }).catch(console.error);
-          }).catch(console.error);
-        }).catch(console.error);
         return message.delete();
       }
 

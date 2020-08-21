@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 
 const SUGGESTION_CHANNEL = '746428338255560784'
+const SUGGESTION_CHANNELL = '746432337557979297'
 
 Discord.RichEmbed = Discord.MessageEmbed;
 
@@ -70,7 +71,25 @@ bot.on("message", async message => {
         let embed = new Discord.RichEmbed()
         .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
         .setColor(15844367)
-        .setTitle('Server Suggestie')
+        .setTitle('PokéPlay Suggestions')
+        .setDescription(message.content)
+        .setTimestamp(new Date);
+        message.channel.send(embed).then((message) => {
+          const sent = message;
+          sent.react('✅').then(() => {
+            sent.react('❌').then(() => {
+              log(LOG_LEVELS.SPAM,'Completed suggestion message');
+            }).catch(console.error);
+          }).catch(console.error);
+        }).catch(console.error);
+        return message.delete();
+      }
+
+      if (message.channel.id === SUGGESTION_CHANNELL) {
+        let embed = new Discord.RichEmbed()
+        .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
+        .setColor(15844367)
+        .setTitle('Discord Suggestions')
         .setDescription(message.content)
         .setTimestamp(new Date);
         message.channel.send(embed).then((message) => {

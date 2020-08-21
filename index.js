@@ -76,8 +76,12 @@ bot.on("message", async message => {
         .setTimestamp(new Date);
         message.channel.send(embed).then((message) => {
           const sent = message;
-          sent.react('✅').then(() => {
-            sent.react('❌').then(() => {
+          sent.react('✅');
+            sent.react('❌');
+          
+            
+          
+        });
         return message.delete();
       }
 
@@ -90,8 +94,12 @@ bot.on("message", async message => {
         .setTimestamp(new Date);
         message.channel.send(embed).then((message) => {
           const sent = message;
-          sent.react('✅').then(() => {
-            sent.react('❌').then(() => {
+          sent.react('✅');
+            sent.react('❌');
+          
+            
+          
+        });
         return message.delete();
       }
 

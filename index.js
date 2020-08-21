@@ -72,7 +72,7 @@ bot.on("message", async message => {
         .setColor(15844367)
         .setTitle('Server Suggestie')
         .setDescription(message.content)
-        .setTimestamp(message.member.nickname());
+        .setTimestamp(new Date);
         message.channel.send(embed).then((message) => {
           const sent = message;
           sent.react('✅').then(() => {

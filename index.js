@@ -4,6 +4,8 @@ const botConfig = require("./botconfig.json");
 const SUGGESTION_CHANNEL = '746428338255560784'
 const SUGGESTION_CHANNELL = '746432337557979297'
 
+const token ='NzQ2NDI2Mzc5Njc5MzAxNjcz.X0AJvA.aGV3woPn1WuxmjWHavYIm7FWRBE';
+
 Discord.RichEmbed = Discord.MessageEmbed;
 
 
@@ -69,7 +71,7 @@ bot.on("message", async message => {
 
     if (message.channel.id === SUGGESTION_CHANNEL) {
         let embed = new Discord.RichEmbed()
-        .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
+        .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag, message.author.avatarURL)
         .setColor(1146986)
         .setTitle('PokéPlay Suggestions')
         .setDescription(message.content)
@@ -87,7 +89,7 @@ bot.on("message", async message => {
 
       if (message.channel.id === SUGGESTION_CHANNELL) {
         let embed = new Discord.RichEmbed()
-        .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag,message.author.displayAvatarURL)
+        .setAuthor(message.member.nickname ? message.member.nickname : message.author.tag, message.author.displayAvatarURL)
         .setColor(1146986)
         .setTitle('Discord Suggestions')
         .setDescription(message.content)
@@ -107,4 +109,4 @@ bot.on("message", async message => {
 
 
 
-bot.login(process.env.token);
+bot.login(token);
